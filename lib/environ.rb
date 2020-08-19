@@ -1,5 +1,5 @@
-require_relative "rsharma_cli_project/version"
-require_relative "./lib/rsharma_cli_project/cli"
+require_relative "./rsharma_cli_project/version"
+require_relative "./rsharma_cli_project/cli"
 
 module RsharmaCliProject
   class Error < StandardError; end

@@ -1,1 +1,5 @@
-require_relative "../lib/rsharma_cli_project.rb"
+#!/usr/bin/env ruby
+
+require_relative '../lib/environ'
+
+CLI.new.call
