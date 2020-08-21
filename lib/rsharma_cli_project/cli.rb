@@ -10,7 +10,6 @@ class RsharmaCliProject::CLI
 
   
   def titles
-    RsharmaCliProject::Episode.new("fake")
     @titles = RsharmaCliProject::Episode.all
   end
   

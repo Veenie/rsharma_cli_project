@@ -12,6 +12,7 @@ class RsharmaCliProject::Episode
   end  
   
   def self.all
+    RsharmaCliProject::Scraper.scrape_titles if @@all.empty?
     @@all
   end
   
