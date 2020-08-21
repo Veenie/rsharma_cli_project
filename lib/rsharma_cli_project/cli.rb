@@ -14,8 +14,13 @@ class CLI
   end
   
   def list_titles
-    @titles.each_with_index do |title, index|
-      puts "#{index + 1}. #{title}"
+    puts "Put in the number of the episode you'd like to see a description for!"
+    @titles.each.with_index(1) do |title, index|
+      puts "#{index}. #{title}"
     end
   end
+  
+  def pick_title
+  end  
+  
 end  
