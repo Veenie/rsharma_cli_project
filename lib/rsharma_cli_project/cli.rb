@@ -1,6 +1,6 @@
 
 
-class CLI
+class RsharmaCliProject::CLI
   
   def call
     puts "Hello World!"
@@ -10,7 +10,7 @@ class CLI
 
   
   def titles
-    @titles = ['A', 'B', 'C']
+    @titles = RsharmaCliProject::Episode.all
   end
   
   def list_titles
