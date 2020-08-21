@@ -1,5 +1,15 @@
 class RsharmaCliProject::Episode
-  @@all = ["A", "B", "C"]
+  @@all = []
+  attr_accessor :name
+  
+  def initialize(name)
+    @name = name
+    save
+  end
+  
+  def save
+    @@all << self
+  end  
   
   def self.all
     @@all
@@ -7,4 +17,4 @@ class RsharmaCliProject::Episode
   
   
   
-end  
+end 
