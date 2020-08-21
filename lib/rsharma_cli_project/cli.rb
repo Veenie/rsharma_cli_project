@@ -10,13 +10,14 @@ class RsharmaCliProject::CLI
 
   
   def titles
+    RsharmaCliProject::Episode.new("fake")
     @titles = RsharmaCliProject::Episode.all
   end
   
   def list_titles
     puts "Put in the number of the episode you'd like to see a description for!"
     @titles.each.with_index(1) do |title, index|
-      puts "#{index}. #{title}"
+      puts "#{index}. #{title.name}"
     end
   end
   
