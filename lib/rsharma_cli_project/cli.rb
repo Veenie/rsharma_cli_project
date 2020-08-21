@@ -21,6 +21,17 @@ class CLI
   end
   
   def pick_title
+    selected = gets.strip
+    description(selected) if valid_entry(selected, @titles)
+  end
+  
+  def valid_entry(input, data)
+    input.to_i <= data.length && input.to_i > 0
+  end
+  
+  def description
+    
   end  
+    
   
 end  
