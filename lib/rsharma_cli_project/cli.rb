@@ -21,7 +21,7 @@ class CLI
   end
   
   def pick_title
-    selected = gets.strip
+    selected = gets.strip.to_i
     description(selected) if valid_entry(selected, @titles)
   end
   
@@ -29,7 +29,10 @@ class CLI
     input.to_i <= data.length && input.to_i > 0
   end
   
-  def description
+  def description(selected)
+    episode = @titles[selected - 1]
+    puts "Here is the description for #{episode}"
+    
     
   end  
     
