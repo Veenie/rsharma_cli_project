@@ -31,7 +31,6 @@ class RsharmaCliProject::CLI
   def show_description(selected)
     episode = @titles[selected - 1]
     puts "Here is the description for #{episode.name}:"
-    episode.get_description
     puts episode.description
     
   end  
