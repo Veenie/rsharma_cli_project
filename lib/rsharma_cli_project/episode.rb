@@ -1,7 +1,6 @@
 class RsharmaCliProject::Episode
   @@all = []
-  attr_accessor :name
-  attr_writer :descriptions
+  attr_accessor :name, :descriptions
   
   def initialize(name)
     @name = name

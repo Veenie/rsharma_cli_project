@@ -32,6 +32,7 @@ class RsharmaCliProject::CLI
     episode = @titles[selected - 1]
     puts "Here is the description for #{episode.name}:"
     episode.get_descriptions
+    puts episode.descriptions
     
   end  
     
