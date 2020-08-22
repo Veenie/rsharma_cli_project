@@ -1,10 +1,9 @@
 class RsharmaCliProject::Episode
   @@all = []
-  attr_accessor :name, :descriptions
+  attr_accessor :name, :description
   
   def initialize(name)
     @name = name
-    @descriptions = []
     save
   end
   
@@ -17,10 +16,9 @@ class RsharmaCliProject::Episode
     @@all
   end
   
-  def get_descriptions
-    RsharmaCliProject::Scraper.scrape_descrip(self) if @descriptions.empty?
+  def get_description
+    RsharmaCliProject::Scraper.scrape_descrip(self) if description == nil
   end
-  
   
   
 end 
