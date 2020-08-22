@@ -18,9 +18,8 @@ class RsharmaCliProject::Episode
     @@all
   end
   
-  def descriptions
+  def get_descriptions
     RsharmaCliProject::Scraper.scrape_descrip(self) if @descriptions.empty?
-    @descriptions
   end
   
   
