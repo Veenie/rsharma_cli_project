@@ -16,13 +16,10 @@ class RsharmaCliProject::Scraper
     doc = Nokogiri::HTML(open(site))
     des = doc.css("td.description")
     des.each do |d|
-      binding.pry
-      d.text = array
-    end
-    array.each do |x|
-      x = name
-      episode.descriptions << name
+      descrip = d.text
+    binding.pry  
     end  
+      
   end  
 
 
