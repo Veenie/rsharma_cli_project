@@ -11,6 +11,16 @@ class RsharmaCliProject::Scraper
     
   end  
 
+  def self.scrape_descrip
+    site = "https://en.wikipedia.org/wiki/List_of_ThunderCats_(2011_TV_series)_episodes"
+    doc = Nokogiri::HTML(open(site))
+    des = doc.css("td.description")
+    des.each do |d|
+      name = d.text
+      RsharmaCliProject::Episode.new(name)
+    end
+  end  
+
 
 
 end  

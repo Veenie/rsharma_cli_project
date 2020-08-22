@@ -5,6 +5,7 @@ class RsharmaCliProject::Episode
   
   def initialize(name)
     @name = name
+    @descriptions = []
     save
   end
   
@@ -12,14 +13,14 @@ class RsharmaCliProject::Episode
     @@all << self
   end  
   
-  def descriptions
-    RsharmaCliProject::Scraper.scrape_descriptions(self) if @descriptions.empty?
-    @descriptions
-  end
-  
   def self.all
     RsharmaCliProject::Scraper.scrape_titles if @@all.empty?
     @@all
+  end
+  
+  def descriptions
+    RsharmaCliProject::Scraper.scrape_descrip(self) if @descriptions.empty?
+    @descriptions
   end
   
   

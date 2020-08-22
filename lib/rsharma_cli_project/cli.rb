@@ -1,5 +1,3 @@
-
-
 class RsharmaCliProject::CLI
   
   def call
