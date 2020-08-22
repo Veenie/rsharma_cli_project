@@ -6,6 +6,7 @@ class RsharmaCliProject::CLI
     puts "Hello World!"
     titles
     list_titles
+    pick_title
   end
 
   
@@ -22,17 +23,17 @@ class RsharmaCliProject::CLI
   
   def pick_title
     selected = gets.strip.to_i
-    description(selected) if valid_entry(selected, @titles)
+    show_description(selected) if valid_entry(selected, @titles)
   end
   
   def valid_entry(input, data)
     input.to_i <= data.length && input.to_i > 0
   end
   
-  def description(selected)
+  def show_description(selected)
     episode = @titles[selected - 1]
-    puts "Here is the description for #{episode}"
-    
+    puts "Here is the description for #{episode.name}:"
+    episode.descriptions
     
   end  
     
