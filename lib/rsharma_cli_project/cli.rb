@@ -2,17 +2,17 @@ class RsharmaCliProject::CLI
   
   def call
     puts "Hello World!"
-    titles
-    list_titles
+    start
+    list_books
     pick_title
   end
 
   
-  def titles
-    @titles = RsharmaCliProject::Book.all
+  def start
+    @titles = RsharmaCliProject::Episode.all
   end
   
-  def list_titles
+  def list_books
     puts "Put in the number of the book you'd like to see a description for!"
     @titles.each.with_index(1) do |title, index|
       puts "#{index}. #{title.name}"
@@ -33,7 +33,7 @@ class RsharmaCliProject::CLI
     puts "Here is the description for #{book.name}:"
     puts book.price
     
-  end  w
+  end
     
   
 end

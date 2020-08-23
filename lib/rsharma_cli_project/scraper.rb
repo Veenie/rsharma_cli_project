@@ -4,12 +4,14 @@ class RsharmaCliProject::Scraper
   @descrip = []
   
   def self.scrape
-   site = "https://en.wikipedia.org/wiki/List_of_The_Big_O_episodes"
+   site = "http://books.toscrape.com/catalogue/category/books/travel_2/index.html"
    doc = Nokogiri::HTML(open(site))
-   titles = doc.css("tbody")
+   titles = doc.css("ol.row")
+   
    titles.each do |x|
-     name = x.css("td.summary").text
-     des = x.css("td.description").text
+     name = x.css("a").text
+     price = x.css("p.price_color").text
+     RsharmaCliProject::Episode.new(name, price)
      binding.pry
     end
    end
