@@ -6,19 +6,29 @@ class RsharmaCliProject::Scraper
   def self.scrape
    site = "https://en.wikipedia.org/wiki/List_of_The_Big_O_episodes"
    doc = Nokogiri::HTML(open(site))
-   titles = doc.css("td.summary")
-   titles.map do |t|
-     name = t.text
-     @name << name
-     
-   end
-   des = doc.css("td.description")
-   des.each do |d|
-     description = d.text
-     @descrip << description
-     
+   titles = doc.css("tbody")
+   titles.each do |x|
+     name = x.css("td.summary").text
+     des = x.css("td.description").text
+     binding.pry
     end
-  end
+   end
+   
+   
+   
+   
+  # titles.map do |t|
+  #   name = t.text
+  #   @name << name
+     
+  # end
+  # des = doc.css("td.description")
+  # des.each do |d|
+  #   description = d.text
+  #   @descrip << description
+     
+  #   end
+  # end
   
   
   

@@ -9,11 +9,11 @@ class RsharmaCliProject::CLI
 
   
   def titles
-    @titles = RsharmaCliProject::Episode.all
+    @titles = RsharmaCliProject::Book.all
   end
   
   def list_titles
-    puts "Put in the number of the episode you'd like to see a description for!"
+    puts "Put in the number of the book you'd like to see a description for!"
     @titles.each.with_index(1) do |title, index|
       puts "#{index}. #{title.name}"
     end
@@ -29,11 +29,11 @@ class RsharmaCliProject::CLI
   end
   
   def show_description(selected)
-    episode = @titles[selected - 1]
-    puts "Here is the description for #{episode.name}:"
-    puts episode.description
+    book = @titles[selected - 1]
+    puts "Here is the description for #{book.name}:"
+    puts book.price
     
-  end  
+  end  w
     
   
 end
