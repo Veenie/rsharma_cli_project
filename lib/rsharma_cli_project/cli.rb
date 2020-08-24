@@ -1,7 +1,7 @@
 class RsharmaCliProject::CLI
   
   def call
-    puts "Hello World!"
+    puts "Welcome to the Cowboy Bebop episode guide!"
     list_episodes
     pick_title
   end
@@ -18,7 +18,7 @@ class RsharmaCliProject::CLI
     selected = gets.strip.to_i
     if valid_entry(selected, @titles)
       show_description(selected)
-    else puts "\n Please enter a valid number, please wait, returning to list."
+    else puts "\n You did not enter a valid number, now returning to the list."
       sleep(4)
       call
     end  
