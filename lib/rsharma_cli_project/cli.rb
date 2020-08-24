@@ -8,7 +8,7 @@ class RsharmaCliProject::CLI
   
   def list_episodes
     @titles = RsharmaCliProject::Episode.all
-    puts "Put in the number of the book you'd like to see a description for!"
+    puts "\nPut in the number of the episode you'd like to see a description for!"
     @titles.each.with_index(1) do |title, index|
       puts "#{index}. #{title.name}"
     end
@@ -18,8 +18,8 @@ class RsharmaCliProject::CLI
     selected = gets.strip.to_i
     if valid_entry(selected, @titles)
       show_description(selected)
-    else puts "Please enter a valid number, returning to list."
-      sleep(2)
+    else puts "\n Please enter a valid number, please wait, returning to list."
+      sleep(4)
       call
     end  
   end
@@ -36,7 +36,7 @@ class RsharmaCliProject::CLI
   end
   
   def continue
-    puts "\n Press any key to return to the list or press the x key to exit the program"
+    puts "\n Enter in any input to return to the list. Press the x key to exit the program"
     selected = gets.strip
     if selected != "x"
       call
@@ -49,6 +49,6 @@ class RsharmaCliProject::CLI
   def bye
     sleep(1)
     puts "\n Thank you for using this program, goodbye!"
-  end  
+  end
   
 end
