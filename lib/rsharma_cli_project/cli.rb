@@ -2,11 +2,11 @@ class RsharmaCliProject::CLI
   
   def call
     puts "Hello World!"
-    list_books
+    list_episodes
     pick_title
   end
   
-  def list_books
+  def list_episodes
     @titles = RsharmaCliProject::Episode.all
     puts "Put in the number of the book you'd like to see a description for!"
     @titles.each.with_index(1) do |title, index|
@@ -29,15 +29,26 @@ class RsharmaCliProject::CLI
   end
   
   def show_description(selected)
-    book = @titles[selected - 1]
-    puts "Here is the description for #{book.name}:"
-    puts book.price
-    bye
+    episode = @titles[selected - 1]
+    puts "Here is the description for '#{episode.name}':"
+    puts episode.description
+    continue
   end
   
+  def continue
+    puts "\n Press any key to return to the list or press the x key to exit the program"
+    selected = gets.strip
+    if selected != "x"
+      call
+    else
+      bye
+    end
+  end  
+    
+  
   def bye
-    sleep(2)
-    puts "Thank you for using this program, goodbye!"
+    sleep(1)
+    puts "\n Thank you for using this program, goodbye!"
   end  
   
 end
