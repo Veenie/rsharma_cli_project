@@ -36,7 +36,7 @@ class RsharmaCliProject::CLI
   end
   
   def continue
-    puts "\n Enter in any input to return to the list. Press the x key to exit the program"
+    puts "\n Enter in any input to return to the list. Press the X key to exit the program"
     selected = gets.strip
     if selected != "x"
       call
@@ -48,7 +48,7 @@ class RsharmaCliProject::CLI
   
   def bye
     sleep(1)
-    puts "\n Thank you for using this program, goodbye!"
+    puts "\n Thank you for using this program, see you space cowboy!"
   end
   
 end
