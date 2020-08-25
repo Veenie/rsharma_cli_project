@@ -18,7 +18,7 @@ class RsharmaCliProject::CLI
     selected = gets.strip.to_i
     if valid_entry(selected, @titles)
       show_description(selected)
-    else puts "\n You did not enter a valid number, now returning to the list."
+    else puts "\nYou did not enter a valid number, now returning to the list."
       sleep(4)
       call
     end  
@@ -30,13 +30,13 @@ class RsharmaCliProject::CLI
   
   def show_description(selected)
     episode = @titles[selected - 1]
-    puts "Here is the description for '#{episode.name}':"
+    puts "\nHere is the description for '#{episode.name}':"
     puts episode.description
     continue
   end
   
   def continue
-    puts "\n Enter in any input to return to the list. Press the X key to exit the program"
+    puts "\nEnter any input to return to the list. Input a lowercase 'x' to exit the program"
     selected = gets.strip
     if selected != "x"
       call
@@ -48,7 +48,7 @@ class RsharmaCliProject::CLI
   
   def bye
     sleep(1)
-    puts "\n Thank you for using this program, see you space cowboy!"
+    puts "\nThank you for using this program, see you space cowboy!"
   end
   
 end
