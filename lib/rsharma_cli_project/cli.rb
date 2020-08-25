@@ -18,9 +18,8 @@ class RsharmaCliProject::CLI
     selected = gets.strip.to_i
     if valid_entry(selected, @titles)
       show_description(selected)
-    else puts "\nYou did not enter a valid number, now returning to the list."
-      sleep(4)
-      call
+    else puts "\nYou did not enter a valid number."
+      continue
     end  
   end
   
