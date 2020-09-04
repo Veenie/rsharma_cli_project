@@ -7,9 +7,9 @@ class RsharmaCliProject::CLI
   end
   
   def list_episodes
-    @titles = RsharmaCliProject::Episode.all
+    @all = RsharmaCliProject::Episode.all
     puts "\nPut in the number of the episode you'd like to see a description for!"
-    @titles.each.with_index(1) do |title, index|
+    @all.each.with_index(1) do |title, index|
       puts "#{index}. #{title.name}"
     end
   end
@@ -28,7 +28,7 @@ class RsharmaCliProject::CLI
   end
   
   def show_description(selected)
-    episode = @titles[selected - 1]
+    episode = @all[selected - 1]
     puts "\nHere is the description for '#{episode.name}':"
     puts episode.description
     continue

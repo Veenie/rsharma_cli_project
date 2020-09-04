@@ -1,6 +1,6 @@
 class RsharmaCliProject::Episode
   @@all = []
-  attr_accessor :name, :description
+  attr_reader :name, :description
   
   def initialize(name, description)
     @name = name
@@ -10,7 +10,7 @@ class RsharmaCliProject::Episode
 
 
   def save
-    @@all << self	    
+    @@all << self
   end
 
 
